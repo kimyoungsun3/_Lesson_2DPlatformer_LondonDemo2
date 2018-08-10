@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - Crate
+  - Enemy
+  - Wall
+  - Obstacle
+  - Bullet
+  - BombPickup
+  - ExplosionFX
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -13,11 +22,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bombs
+  - Player
+  - Enemies
+  - Pickups
+  - Ground
   - 
   - 
   - 
@@ -40,4 +49,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Default
+    uniqueID: 2850754339
+    locked: 0
+  - name: Background
+    uniqueID: 627071721
+    locked: 0
+  - name: Character
+    uniqueID: 2902530127
+    locked: 0
+  - name: Foreground
+    uniqueID: 1243347523
+    locked: 0
+  - name: UI
+    uniqueID: 3511896133
     locked: 0
