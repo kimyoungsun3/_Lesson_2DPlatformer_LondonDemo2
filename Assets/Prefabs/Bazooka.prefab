@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4138487111004002}
   - component: {fileID: 50377599187106042}
   - component: {fileID: 61201991267911856}
+  - component: {fileID: 114614522345298968}
   m_Layer: 0
   m_Name: Bazooka
   m_TagString: Untagged
@@ -195,6 +196,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114614522345298968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420807431782434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe0b2f74c388834298ed04cdeae1668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabExplosion: {fileID: 1891064455172592, guid: b76c13e969b77ae499f34bbbb368174e,
+    type: 2}
 --- !u!198 &198036244542929552
 ParticleSystem:
   m_ObjectHideFlags: 1

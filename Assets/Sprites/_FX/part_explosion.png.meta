@@ -6,6 +6,7 @@ TextureImporter:
     21300002: part_explosion_1
     21300004: part_explosion_2
     21300006: part_explosion_3
+    21300008: part_explosion_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -597,6 +598,20 @@ TextureImporter:
         - {x: -133, y: -209}
         - {x: -109, y: -195}
       tessellationDetail: -1
+    - serializedVersion: 2
+      name: part_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 840
+        width: 74
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
