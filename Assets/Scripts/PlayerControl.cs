@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-	[HideInInspector] public bool facingRight = true;
 	[HideInInspector] public bool bJump = false;
 
 	public float moveForce = 365f;
@@ -14,6 +13,7 @@ public class PlayerControl : MonoBehaviour {
 	public float tauntProbability = 50f;
 	public float tauntDelay = 1f;
 
+	private bool facingRight = true;
 	private int tauntIndex;
 	private Animator animator;
 	public Transform transGroundCheck;
@@ -21,26 +21,35 @@ public class PlayerControl : MonoBehaviour {
 	private bool bGrounded = false;
 	private Transform trans;
 	private Rigidbody2D rb2d;
+	private PlayerShoot playerShoot;
 
-	void Start () {
-		animator = GetComponent<Animator> ();
-		rb2d = GetComponent<Rigidbody2D> ();
-		trans = transform;
+	void Start () 
+	{
+		trans 		= transform;
+		animator 	= GetComponent<Animator> ();
+		rb2d 		= GetComponent<Rigidbody2D> ();
+		playerShoot	= GetComponent<PlayerShoot> ();
+		playerShoot.SetInit (animator);
 		//Debug.Log (bJump);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		bGrounded = Physics2D.Linecast (trans.position, transGroundCheck.position, groundMask);
-		if (Input.GetButtonDown ("Jump") && bGrounded) {
+		if ( bGrounded && Input.GetButtonDown ("Jump") ) 
+		{
 			bJump = true;
+		}
+
+		if (Input.GetButtonDown ("Fire1")) {
+			playerShoot.Shoot (facingRight);
 		}
 	}
 
 	void FixedUpdate(){
 		float h = Input.GetAxis ("Horizontal");
-
-		//animator.SetFloat ("Speed", Mathf.Abs (h));
+		animator.SetFloat ("Speed", Mathf.Abs (h));
 
 		//move
 		if (h * rb2d.velocity.x < maxSpeed) {
@@ -61,7 +70,7 @@ public class PlayerControl : MonoBehaviour {
 
 		//jump
 		if (bJump) {
-			//animator.SetTrigger ("Jump");
+			animator.SetTrigger ("Jump");
 			int _r = Random.Range(0, jumpClips.Length);
 			AudioSource.PlayClipAtPoint (jumpClips [_r], trans.position);
 
@@ -69,7 +78,6 @@ public class PlayerControl : MonoBehaviour {
 
 			bJump = false;
 		}
-		/**/
 	}
 
 	void Flip(){
