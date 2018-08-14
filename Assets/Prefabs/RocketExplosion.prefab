@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 82405556654416380}
   - component: {fileID: 114999186454273278}
   m_Layer: 0
-  m_Name: RockExplosion
+  m_Name: RocketExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

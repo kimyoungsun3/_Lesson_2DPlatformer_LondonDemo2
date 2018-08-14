@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 61201991267911856}
   - component: {fileID: 114614522345298968}
   m_Layer: 0
-  m_Name: Bazooka
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

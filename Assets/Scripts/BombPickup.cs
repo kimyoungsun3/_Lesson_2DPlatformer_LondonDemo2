@@ -13,7 +13,7 @@ public class BombPickup : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D _col){
-		//Debug.Log (_col.tag);
+		Debug.Log (_col.tag);
 		if (_col.CompareTag ("Player")) {
 			AudioSource.PlayClipAtPoint (pickupClip, transform.position);
 
@@ -26,6 +26,11 @@ public class BombPickup : MonoBehaviour {
 		} else if (_col.CompareTag ("ground") && !bLanded) {
 			bLanded = true;
 			animator.SetTrigger ("Land");
+			Debug.Log (" > Land");
 		}
+	}
+
+	void InvokeDisableAnimator(){
+		animator.enabled = false;
 	}
 }
